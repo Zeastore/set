@@ -244,7 +244,7 @@ read -rp "Input ur domain : " -e pp
 wget -q "https://raw.githubusercontent.com/Zeastore/set/main/dll/cf.sh" && chmod +x cf.sh && ./cf.sh
 fi
 
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com//main/newmenu.sh" && chmod +x /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Zeastore/set/main/newmenu.sh" && chmod +x /usr/bin/menu
 wget -q "https://raw.githubusercontent.com/Zeastore/set/main/ssh/ssh-vpn.sh" && chmod +x ssh-vpn.sh && screen -S sshvpn ./ssh-vpn.sh
 if [ "$coreselect" = "v2ray" ]; then
 wget -q "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/ins-vt.sh" && chmod +x ins-vt.sh && screen -S insvt ./ins-vt.sh
