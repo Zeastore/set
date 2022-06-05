@@ -3,66 +3,6 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
-BURIQ () {
-    curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk > /root/tmp
-    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
-    for user in "${data[@]}"
-    do
-    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
-    d1=(`date -d "$exp" +%s`)
-    d2=(`date -d "$biji" +%s`)
-    exp2=$(( (d1 - d2) / 86400 ))
-    if [[ "$exp2" -le "0" ]]; then
-    echo $user > /etc/.$user.ini
-    else
-    rm -f /etc/.$user.ini > /dev/null 2>&1
-    fi
-    done
-    rm -f /root/tmp
-}
-
-MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
-echo $Name > /usr/local/etc/.$Name.ini
-CekOne=$(cat /usr/local/etc/.$Name.ini)
-
-Bloman () {
-if [ -f "/etc/.$Name.ini" ]; then
-CekTwo=$(cat /etc/.$Name.ini)
-    if [ "$CekOne" = "$CekTwo" ]; then
-        res="Expired"
-    fi
-else
-res="Permission Accepted..."
-fi
-}
-
-PERMISSION () {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-    Bloman
-    else
-    res="Permission Denied!"
-    fi
-    BURIQ
-}
-
-red='\e[1;31m'
-green='\e[1;32m'
-yell='\e[1;33m'
-NC='\e[0m'
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
-
-if [ -f /home/needupdate ]; then
-echo -ne
-else
-red "Permission Denied!"
-exit 0
-fi
-
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
@@ -83,11 +23,11 @@ rm -rf /etc/user-update/ > /dev/null 2>&1
 fi
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-NameUser=$(curl -sS https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/Zeastore/set/main/s | grep $MYIP | awk '{print $2}')
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 clear
 
-serverV=$( curl -sS https://raw.githubusercontent.com/scvps/perizinan/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/Zeastore/set/main/versi  )
 if [[  $(cat /opt/.ver) = $serverV ]]; then
 echo "You Have The Latest Version"
 exit 0
@@ -101,7 +41,7 @@ else
 clear
 fi
 systemctl stop cron > /dev/null 2>&1
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/Zeastore/set/main/resources/ascii-home
 echo
 sleep 1
 date
@@ -113,87 +53,87 @@ sleep 1
 #update ssh
 Updater_ALL () {
 echo -e "[ ${green}INFO${NC} ] Updating ssh ..."
-    wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/usernew.sh" && chmod +x /usr/bin/usernew
-    wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/trial.sh" && chmod +x /usr/bin/trial
-    wget -q -O /usr/bin/hapus "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/hapus.sh" && chmod +x /usr/bin/hapus
-    wget -q -O /usr/bin/member "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/member.sh" && chmod +x /usr/bin/member
-    wget -q -O /usr/bin/delete "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/delete.sh" && chmod +x /usr/bin/delete
-    wget -q -O /usr/bin/cek "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/cek.sh" && chmod +x /usr/bin/cek
-    wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/restart.sh" && chmod +x /usr/bin/restart
-    wget -q -O /usr/bin/renew "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/renew.sh" && chmod +x /usr/bin/renew
-    wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/autokill.sh" && chmod +x /usr/bin/autokill
-    wget -q -O /usr/bin/ceklim "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/ceklim.sh" && chmod +x /usr/bin/ceklim
-    wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/tendang.sh" && chmod +x /usr/bin/tendang
-    wget -q -O /usr/bin/port-dropbear "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-dropbear.sh" && chmod +x /usr/bin/port-dropbear
-    wget -q -O /usr/bin/port-ovpn "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ovpn.sh" && chmod +x /usr/bin/port-ovpn
-    wget -q -O /usr/bin/port-ssl "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ssl.sh" && chmod +x /usr/bin/port-ssl
-    wget -q -O /usr/bin/banner "https://raw.githubusercontent.com/scvps/scriptvps/main/banner/banner.sh" && chmod +x /usr/bin/banner
-    wget -q -O /usr/bin/sshws "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/ins-sshws.sh" && chmod +x /usr/bin/sshws
-    wget -q -O /usr/bin/ssh-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/ssh-menu.sh" && chmod +x /usr/bin/ssh-menu
-    wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/proxy3.js"
-    wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
-    wget -q -O /usr/bin/port-wssl "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/port-ws-ssl.sh" && chmod +x /usr/bin/port-wssl
-    wget -q -O /usr/bin/portohp "https://raw.githubusercontent.com/scvps/scriptvps/main/ssh/portohp.sh" && chmod +x /usr/bin/portohp
+    wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/Zeastore/set/main/ssh/usernew.sh" && chmod +x /usr/bin/usernew
+    wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/Zeastore/set/main/ssh/trial.sh" && chmod +x /usr/bin/trial
+    wget -q -O /usr/bin/hapus "https://raw.githubusercontent.com/Zeastore/set/main/ssh/hapus.sh" && chmod +x /usr/bin/hapus
+    wget -q -O /usr/bin/member "https://raw.githubusercontent.com/Zeastore/set/main/ssh/member.sh" && chmod +x /usr/bin/member
+    wget -q -O /usr/bin/delete "https://raw.githubusercontent.com/Zeastore/set/main/ssh/delete.sh" && chmod +x /usr/bin/delete
+    wget -q -O /usr/bin/cek "https://raw.githubusercontent.com/Zeastore/set/main/ssh/cek.sh" && chmod +x /usr/bin/cek
+    wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Zeastore/set/main/ssh/restart.sh" && chmod +x /usr/bin/restart
+    wget -q -O /usr/bin/renew "https://raw.githubusercontent.com/Zeastore/set/main/ssh/renew.sh" && chmod +x /usr/bin/renew
+    wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/Zeastore/set/main/ssh/autokill.sh" && chmod +x /usr/bin/autokill
+    wget -q -O /usr/bin/ceklim "https://raw.githubusercontent.com/Zeastore/set/main/ssh/ceklim.sh" && chmod +x /usr/bin/ceklim
+    wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/Zeastore/set/main/ssh/tendang.sh" && chmod +x /usr/bin/tendang
+    wget -q -O /usr/bin/port-dropbear "https://raw.githubusercontent.com/Zeastore/set/main/ssh/port-dropbear.sh" && chmod +x /usr/bin/port-dropbear
+    wget -q -O /usr/bin/port-ovpn "https://raw.githubusercontent.com/Zeastore/set/main/ssh/port-ovpn.sh" && chmod +x /usr/bin/port-ovpn
+    wget -q -O /usr/bin/port-ssl "https://raw.githubusercontent.com/Zeastore/set/main/ssh/port-ssl.sh" && chmod +x /usr/bin/port-ssl
+    wget -q -O /usr/bin/banner "https://raw.githubusercontent.com/Zeastore/set/main/banner/banner.sh" && chmod +x /usr/bin/banner
+    wget -q -O /usr/bin/sshws "https://raw.githubusercontent.com/Zeastore/set/main/ssh/ins-sshws.sh" && chmod +x /usr/bin/sshws
+    wget -q -O /usr/bin/ssh-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/ssh-menu.sh" && chmod +x /usr/bin/ssh-menu
+    wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/Zeastore/set/main/ssh/proxy3.js"
+    wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/Zeastore/set/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler
+    wget -q -O /usr/bin/port-wssl "https://raw.githubusercontent.com/Zeastore/set/main/ssh/port-ws-ssl.sh" && chmod +x /usr/bin/port-wssl
+    wget -q -O /usr/bin/portohp "https://raw.githubusercontent.com/Zeastore/set/main/ssh/portohp.sh" && chmod +x /usr/bin/portohp
 
 echo -e "[ ${green}INFO${NC} ] Updating v2ray ..."
     if [ "$cekray" = "XRAY" ]; then
     #Update Xray
-    wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/add-ws.sh" && chmod +x /usr/bin/add-ws
-    wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/add-vless.sh" && chmod +x /usr/bin/add-vless
-    wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/add-tr.sh" && chmod +x /usr/bin/add-tr
-    wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/del-ws.sh" && chmod +x /usr/bin/del-ws
-    wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/del-vless.sh" && chmod +x /usr/bin/del-vless
-    wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/del-tr.sh" && chmod +x /usr/bin/del-tr
-    wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/cek-ws.sh" && chmod +x /usr/bin/cek-ws
-    wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/cek-vless.sh" && chmod +x /usr/bin/cek-vless
-    wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/cek-tr.sh" && chmod +x /usr/bin/cek-tr
-    wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/renew-ws.sh" && chmod +x /usr/bin/renew-ws
-    wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/renew-vless.sh" && chmod +x /usr/bin/renew-vless
-    wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/renew-tr.sh" && chmod +x /usr/bin/renew-tr
-    wget -q -O /usr/bin/trial-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/trial-ws.sh" && chmod +x /usr/bin/trial-ws
-    wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/trial-vless.sh" && chmod +x /usr/bin/trial-vless
-    wget -q -O /usr/bin/trial-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/trial-tr.sh" && chmod +x /usr/bin/trial-tr
-    wget -q -O /usr/bin/port-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/port-ws.sh" && chmod +x /usr/bin/port-ws
-    wget -q -O /usr/bin/port-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/port-vless.sh" && chmod +x /usr/bin/port-vless
-    wget -q -O /usr/bin/port-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/port-tr.sh" && chmod +x /usr/bin/port-tr
-    wget -q -O /usr/bin/renewcert "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/cert.sh" && chmod +x /usr/bin/renewcert
-    wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/add-trgo.sh" && chmod +x /usr/bin/add-trgo
-    wget -q -O /usr/bin/renew-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/renew-trgo.sh" && chmod +x /usr/bin/renew-trgo
-    wget -q -O /usr/bin/cek-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/cek-trgo.sh" && chmod +x /usr/bin/cek-trgo
-    wget -q -O /usr/bin/del-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/del-trgo.sh" && chmod +x /usr/bin/del-trgo
-    wget -q -O /usr/bin/trial-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/trial-trgo.sh" && chmod +x /usr/bin/trial-trgo
-    wget -q -O /usr/bin/port-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/port-trgo.sh" && chmod +x /usr/bin/port-trgo
-    wget -q -O /usr/bin/v2ray-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/v2ray-menu.sh" && chmod +x /usr/bin/v2ray-menu
-    wget -q -O /usr/bin/trojan-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/trojan-menu.sh" && chmod +x /usr/bin/trojan-menu
+    wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/add-ws.sh" && chmod +x /usr/bin/add-ws
+    wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/add-vless.sh" && chmod +x /usr/bin/add-vless
+    wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/add-tr.sh" && chmod +x /usr/bin/add-tr
+    wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/del-ws.sh" && chmod +x /usr/bin/del-ws
+    wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/del-vless.sh" && chmod +x /usr/bin/del-vless
+    wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/del-tr.sh" && chmod +x /usr/bin/del-tr
+    wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/cek-ws.sh" && chmod +x /usr/bin/cek-ws
+    wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/cek-vless.sh" && chmod +x /usr/bin/cek-vless
+    wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/cek-tr.sh" && chmod +x /usr/bin/cek-tr
+    wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/renew-ws.sh" && chmod +x /usr/bin/renew-ws
+    wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/renew-vless.sh" && chmod +x /usr/bin/renew-vless
+    wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/renew-tr.sh" && chmod +x /usr/bin/renew-tr
+    wget -q -O /usr/bin/trial-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/trial-ws.sh" && chmod +x /usr/bin/trial-ws
+    wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/trial-vless.sh" && chmod +x /usr/bin/trial-vless
+    wget -q -O /usr/bin/trial-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/trial-tr.sh" && chmod +x /usr/bin/trial-tr
+    wget -q -O /usr/bin/port-ws "https://raw.githubusercontent.com/Zeastore/set/main/xray/port-ws.sh" && chmod +x /usr/bin/port-ws
+    wget -q -O /usr/bin/port-vless "https://raw.githubusercontent.com/Zeastore/set/main/xray/port-vless.sh" && chmod +x /usr/bin/port-vless
+    wget -q -O /usr/bin/port-tr "https://raw.githubusercontent.com/Zeastore/set/main/xray/port-tr.sh" && chmod +x /usr/bin/port-tr
+    wget -q -O /usr/bin/renewcert "https://raw.githubusercontent.com/Zeastore/set/main/xray/cert.sh" && chmod +x /usr/bin/renewcert
+    wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/add-trgo.sh" && chmod +x /usr/bin/add-trgo
+    wget -q -O /usr/bin/renew-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/renew-trgo.sh" && chmod +x /usr/bin/renew-trgo
+    wget -q -O /usr/bin/cek-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/cek-trgo.sh" && chmod +x /usr/bin/cek-trgo
+    wget -q -O /usr/bin/del-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/del-trgo.sh" && chmod +x /usr/bin/del-trgo
+    wget -q -O /usr/bin/trial-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/trial-trgo.sh" && chmod +x /usr/bin/trial-trgo
+    wget -q -O /usr/bin/port-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/port-trgo.sh" && chmod +x /usr/bin/port-trgo
+    wget -q -O /usr/bin/v2ray-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/v2ray-menu.sh" && chmod +x /usr/bin/v2ray-menu
+    wget -q -O /usr/bin/trojan-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/trojan-menu.sh" && chmod +x /usr/bin/trojan-menu
     else
     #Update v2ray
-    wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/add-ws.sh" && chmod +x /usr/bin/add-ws
-    wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/add-vless.sh" && chmod +x /usr/bin/add-vless
-    wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/add-tr.sh" && chmod +x /usr/bin/add-tr
-    wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/del-ws.sh" && chmod +x /usr/bin/del-ws
-    wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/del-vless.sh" && chmod +x /usr/bin/del-vless
-    wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/del-tr.sh" && chmod +x /usr/bin/del-tr
-    wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/cek-ws.sh" && chmod +x /usr/bin/cek-ws
-    wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/cek-vless.sh" && chmod +x /usr/bin/cek-vless
-    wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/cek-tr.sh" && chmod +x /usr/bin/cek-tr
-    wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/renew-ws.sh" && chmod +x /usr/bin/renew-ws
-    wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/renew-vless.sh" && chmod +x /usr/bin/renew-vless
-    wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/renew-tr.sh" && chmod +x /usr/bin/renew-tr
-    wget -q -O /usr/bin/trial-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/trial-ws.sh" && chmod +x /usr/bin/trial-ws
-    wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/trial-vless.sh" && chmod +x /usr/bin/trial-vless
-    wget -q -O /usr/bin/trial-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/trial-tr.sh" && chmod +x /usr/bin/trial-tr
-    wget -q -O /usr/bin/port-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/port-ws.sh" && chmod +x /usr/bin/port-ws
-    wget -q -O /usr/bin/port-vless "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/port-vless.sh" && chmod +x /usr/bin/port-vless
-    wget -q -O /usr/bin/port-tr "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/port-tr.sh" && chmod +x /usr/bin/port-tr
-    wget -q -O /usr/bin/renewcert "https://raw.githubusercontent.com/scvps/scriptvps/main/v2ray/cert.sh" && chmod +x /usr/bin/renewcert
-    wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/add-trgo.sh" && chmod +x /usr/bin/add-trgo
-    wget -q -O /usr/bin/renew-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/renew-trgo.sh" && chmod +x /usr/bin/renew-trgo
-    wget -q -O /usr/bin/cek-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/cek-trgo.sh" && chmod +x /usr/bin/cek-trgo
-    wget -q -O /usr/bin/del-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/del-trgo.sh" && chmod +x /usr/bin/del-trgo
-    wget -q -O /usr/bin/trial-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/trial-trgo.sh" && chmod +x /usr/bin/trial-trgo
-    wget -q -O /usr/bin/port-trgo "https://raw.githubusercontent.com/scvps/scriptvps/main/trojan/port-trgo.sh" && chmod +x /usr/bin/port-trgo
-    wget -q -O /usr/bin/v2ray-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/v2ray-menu.sh" && chmod +x /usr/bin/v2ray-menu
-    wget -q -O /usr/bin/trojan-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/trojan-menu.sh" && chmod +x /usr/bin/trojan-menu
+    wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/add-ws.sh" && chmod +x /usr/bin/add-ws
+    wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/add-vless.sh" && chmod +x /usr/bin/add-vless
+    wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/add-tr.sh" && chmod +x /usr/bin/add-tr
+    wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/del-ws.sh" && chmod +x /usr/bin/del-ws
+    wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/del-vless.sh" && chmod +x /usr/bin/del-vless
+    wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/del-tr.sh" && chmod +x /usr/bin/del-tr
+    wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/cek-ws.sh" && chmod +x /usr/bin/cek-ws
+    wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/cek-vless.sh" && chmod +x /usr/bin/cek-vless
+    wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/cek-tr.sh" && chmod +x /usr/bin/cek-tr
+    wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/renew-ws.sh" && chmod +x /usr/bin/renew-ws
+    wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/renew-vless.sh" && chmod +x /usr/bin/renew-vless
+    wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/renew-tr.sh" && chmod +x /usr/bin/renew-tr
+    wget -q -O /usr/bin/trial-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/trial-ws.sh" && chmod +x /usr/bin/trial-ws
+    wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/trial-vless.sh" && chmod +x /usr/bin/trial-vless
+    wget -q -O /usr/bin/trial-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/trial-tr.sh" && chmod +x /usr/bin/trial-tr
+    wget -q -O /usr/bin/port-ws "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/port-ws.sh" && chmod +x /usr/bin/port-ws
+    wget -q -O /usr/bin/port-vless "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/port-vless.sh" && chmod +x /usr/bin/port-vless
+    wget -q -O /usr/bin/port-tr "https://raw.githubusercontent.com/Zeastore/set/main/trojan/port-tr.sh" && chmod +x /usr/bin/port-tr
+    wget -q -O /usr/bin/renewcert "https://raw.githubusercontent.com/Zeastore/set/main/v2ray/cert.sh" && chmod +x /usr/bin/renewcert
+    wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/add-trgo.sh" && chmod +x /usr/bin/add-trgo
+    wget -q -O /usr/bin/renew-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/renew-trgo.sh" && chmod +x /usr/bin/renew-trgo
+    wget -q -O /usr/bin/cek-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/cek-trgo.sh" && chmod +x /usr/bin/cek-trgo
+    wget -q -O /usr/bin/del-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/del-trgo.sh" && chmod +x /usr/bin/del-trgo
+    wget -q -O /usr/bin/trial-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/trial-trgo.sh" && chmod +x /usr/bin/trial-trgo
+    wget -q -O /usr/bin/port-trgo "https://raw.githubusercontent.com/Zeastore/set/main/trojan/port-trgo.sh" && chmod +x /usr/bin/port-trgo
+    wget -q -O /usr/bin/v2ray-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/v2ray-menu.sh" && chmod +x /usr/bin/v2ray-menu
+    wget -q -O /usr/bin/trojan-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/trojan-menu.sh" && chmod +x /usr/bin/trojan-menu
     fi
 echo -e "[ ${green}INFO${NC} ] Updating wireguard ..."
     #Update WG
