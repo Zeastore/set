@@ -137,88 +137,88 @@ echo -e "[ ${green}INFO${NC} ] Updating v2ray ..."
     fi
 echo -e "[ ${green}INFO${NC} ] Updating wireguard ..."
     #Update WG
-    wget -q -O /usr/bin/add-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/add-wg.sh" && chmod +x /usr/bin/add-wg
-    wget -q -O /usr/bin/del-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/del-wg.sh" && chmod +x /usr/bin/del-wg
-    wget -q -O /usr/bin/cek-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/cek-wg.sh" && chmod +x /usr/bin/cek-wg
-    wget -q -O /usr/bin/renew-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/renew-wg.sh" && chmod +x /usr/bin/renew-wg
-    wget -q -O /usr/bin/trial-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/trial-wg.sh" && chmod +x /usr/bin/trial-wg
-    wget -q -O /usr/bin/port-wg "https://raw.githubusercontent.com/scvps/scriptvps/main/wireguard/port-wg.sh" && chmod +x /usr/bin/port-wg
-    wget -q -O /usr/bin/wg-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/wg-menu.sh" && chmod +x /usr/bin/wg-menu
+    wget -q -O /usr/bin/add-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/add-wg.sh" && chmod +x /usr/bin/add-wg
+    wget -q -O /usr/bin/del-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/del-wg.sh" && chmod +x /usr/bin/del-wg
+    wget -q -O /usr/bin/cek-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/cek-wg.sh" && chmod +x /usr/bin/cek-wg
+    wget -q -O /usr/bin/renew-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/renew-wg.sh" && chmod +x /usr/bin/renew-wg
+    wget -q -O /usr/bin/trial-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/trial-wg.sh" && chmod +x /usr/bin/trial-wg
+    wget -q -O /usr/bin/port-wg "https://raw.githubusercontent.com/Zeastore/set/main/wireguard/port-wg.sh" && chmod +x /usr/bin/port-wg
+    wget -q -O /usr/bin/wg-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/wg-menu.sh" && chmod +x /usr/bin/wg-menu
 echo -e "[ ${green}INFO${NC} ] Updating sstp ..."
     #Update SSTP
-    wget -q -O /usr/bin/add-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/add-sstp.sh" && chmod +x /usr/bin/add-sstp
-    wget -q -O /usr/bin/del-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/del-sstp.sh" && chmod +x /usr/bin/del-sstp
-    wget -q -O /usr/bin/cek-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/cek-sstp.sh" && chmod +x /usr/bin/cek-sstp
-    wget -q -O /usr/bin/renew-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/renew-sstp.sh" && chmod +x /usr/bin/renew-sstp
-    wget -q -O /usr/bin/trial-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/trial-sstp.sh" && chmod +x /usr/bin/trial-sstp
-    wget -q -O /usr/bin/port-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/port-sstp.sh" && chmod +x /usr/bin/port-sstp
-    wget -q -O /usr/bin/sstp-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/sstp-menu.sh" && chmod +x /usr/bin/sstp-menu
+    wget -q -O /usr/bin/add-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/add-sstp.sh" && chmod +x /usr/bin/add-sstp
+    wget -q -O /usr/bin/del-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/del-sstp.sh" && chmod +x /usr/bin/del-sstp
+    wget -q -O /usr/bin/cek-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/cek-sstp.sh" && chmod +x /usr/bin/cek-sstp
+    wget -q -O /usr/bin/renew-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/renew-sstp.sh" && chmod +x /usr/bin/renew-sstp
+    wget -q -O /usr/bin/trial-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/trial-sstp.sh" && chmod +x /usr/bin/trial-sstp
+    wget -q -O /usr/bin/port-sstp "https://raw.githubusercontent.com/Zeastore/set/main/sstp/port-sstp.sh" && chmod +x /usr/bin/port-sstp
+    wget -q -O /usr/bin/sstp-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/sstp-menu.sh" && chmod +x /usr/bin/sstp-menu
 echo -e "[ ${green}INFO${NC} ] Updating shadowsocks ..."
     #Update SS
-    wget -q -O /usr/bin/add-ss "https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/add-ss.sh" && chmod +x /usr/bin/add-ss
-    wget -q -O /usr/bin/del-ss "https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/del-ss.sh" && chmod +x /usr/bin/del-ss
-    wget -q -O /usr/bin/cek-ss "https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/cek-ss.sh" && chmod +x /usr/bin/cek-ss
-    wget -q -O /usr/bin/renew-ss "https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/renew-ss.sh" && chmod +x /usr/bin/renew-ss
-    wget -q -O /usr/bin/trial-ss "https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/trial-ss.sh" && chmod +x /usr/bin/trial-ss
-    wget -q -O /usr/bin/ss-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/ss-menu.sh" && chmod +x /usr/bin/ss-menu
+    wget -q -O /usr/bin/add-ss "https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/add-ss.sh" && chmod +x /usr/bin/add-ss
+    wget -q -O /usr/bin/del-ss "https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/del-ss.sh" && chmod +x /usr/bin/del-ss
+    wget -q -O /usr/bin/cek-ss "https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/cek-ss.sh" && chmod +x /usr/bin/cek-ss
+    wget -q -O /usr/bin/renew-ss "https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/renew-ss.sh" && chmod +x /usr/bin/renew-ss
+    wget -q -O /usr/bin/trial-ss "https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/trial-ss.sh" && chmod +x /usr/bin/trial-ss
+    wget -q -O /usr/bin/ss-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/ss-menu.sh" && chmod +x /usr/bin/ss-menu
 echo -e "[ ${green}INFO${NC} ] Updating shadowsocks-r ..."
     #Update SSR
-    wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
-    wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
-    wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
-    wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/scvps/scriptvps/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
+    wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
+    wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
+    wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
+    wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/Zeastore/set/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
 echo -e "[ ${green}INFO${NC} ] Updating l2tp ..."
     #Update IPSEC
-    wget -q -O /usr/bin/add-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/add-l2tp.sh && chmod +x /usr/bin/add-l2tp
-    wget -q -O /usr/bin/del-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/del-l2tp.sh && chmod +x /usr/bin/del-l2tp
-    wget -q -O /usr/bin/add-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/add-pptp.sh && chmod +x /usr/bin/add-pptp
-    wget -q -O /usr/bin/del-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/del-pptp.sh && chmod +x /usr/bin/del-pptp
-    wget -q -O /usr/bin/renew-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/renew-pptp.sh && chmod +x /usr/bin/renew-pptp
-    wget -q -O /usr/bin/renew-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/renew-l2tp.sh && chmod +x /usr/bin/renew-l2tp
-    wget -q -O /usr/bin/trial-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/trial-pptp.sh && chmod +x /usr/bin/trial-pptp
-    wget -q -O /usr/bin/trial-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/trial-l2tp.sh && chmod +x /usr/bin/trial-l2tp
+    wget -q -O /usr/bin/add-l2tp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/add-l2tp.sh && chmod +x /usr/bin/add-l2tp
+    wget -q -O /usr/bin/del-l2tp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/del-l2tp.sh && chmod +x /usr/bin/del-l2tp
+    wget -q -O /usr/bin/add-pptp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/add-pptp.sh && chmod +x /usr/bin/add-pptp
+    wget -q -O /usr/bin/del-pptp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/del-pptp.sh && chmod +x /usr/bin/del-pptp
+    wget -q -O /usr/bin/renew-pptp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/renew-pptp.sh && chmod +x /usr/bin/renew-pptp
+    wget -q -O /usr/bin/renew-l2tp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/renew-l2tp.sh && chmod +x /usr/bin/renew-l2tp
+    wget -q -O /usr/bin/trial-pptp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/trial-pptp.sh && chmod +x /usr/bin/trial-pptp
+    wget -q -O /usr/bin/trial-l2tp https://raw.githubusercontent.com/Zeastore/set/main/ipsec/trial-l2tp.sh && chmod +x /usr/bin/trial-l2tp
 echo -e "[ ${green}INFO${NC} ] Updating menu ..."
     #Update Menu
-    wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/scvps/scriptvps/main/newmenu.sh" && chmod +x /usr/bin/menu
-    wget -q -O /usr/bin/setting-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/setting-menu.sh" && chmod +x /usr/bin/setting-menu
-    wget -q -O /usr/bin/autokill-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/autokill-menu.sh" && chmod +x /usr/bin/autokill-menu
-    wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/info-menu.sh" && chmod +x /usr/bin/info-menu
-    wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
-    wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
-    wget -q -O /usr/bin/ipsec-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/ipsec-menu.sh" && chmod +x /usr/bin/ipsec-menu
+    wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Zeastore/set/main/newmenu.sh" && chmod +x /usr/bin/menu
+    wget -q -O /usr/bin/setting-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/setting-menu.sh" && chmod +x /usr/bin/setting-menu
+    wget -q -O /usr/bin/autokill-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/autokill-menu.sh" && chmod +x /usr/bin/autokill-menu
+    wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/info-menu.sh" && chmod +x /usr/bin/info-menu
+    wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
+    wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
+    wget -q -O /usr/bin/ipsec-menu "https://raw.githubusercontent.com/Zeastore/set/main/menu_all/ipsec-menu.sh" && chmod +x /usr/bin/ipsec-menu
 
 echo -e "[ ${green}INFO${NC} ] Updating extension ..."
     #Update Ekstension
-    wget -q -O /usr/bin/status "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/status.sh" && chmod +x /usr/bin/status
-    wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/autoreboot.sh" && chmod +x /usr/bin/autoreboot
-    wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/limit-speed.sh" && chmod +x /usr/bin/limit-speed
-    wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/add-host.sh" && chmod +x /usr/bin/add-host
-    wget -q -O /usr/bin/akill-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/akill-ws.sh" && chmod +x /usr/bin/akill-ws
-    wget -q -O /usr/bin/autokill-ws "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/autokill-ws.sh" && chmod +x /usr/bin/autokill-ws
-    wget -q -O /usr/bin/xp https://raw.githubusercontent.com/scvps/scriptvps/main/dll/xp.sh && chmod +x /usr/bin/xp
-    wget -q -O /usr/bin/info https://raw.githubusercontent.com/scvps/scriptvps/main/dll/info.sh && chmod +x /usr/bin/info
+    wget -q -O /usr/bin/status "https://raw.githubusercontent.com/Zeastore/set/main/dll/status.sh" && chmod +x /usr/bin/status
+    wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Zeastore/set/main/dll/autoreboot.sh" && chmod +x /usr/bin/autoreboot
+    wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/Zeastore/set/main/dll/limit-speed.sh" && chmod +x /usr/bin/limit-speed
+    wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/Zeastore/set/main/dll/add-host.sh" && chmod +x /usr/bin/add-host
+    wget -q -O /usr/bin/akill-ws "https://raw.githubusercontent.com/Zeastore/set/main/dll/akill-ws.sh" && chmod +x /usr/bin/akill-ws
+    wget -q -O /usr/bin/autokill-ws "https://raw.githubusercontent.com/Zeastore/set/main/dll/autokill-ws.sh" && chmod +x /usr/bin/autokill-ws
+    wget -q -O /usr/bin/xp https://raw.githubusercontent.com/Zeastore/set/main/dll/xp.sh && chmod +x /usr/bin/xp
+    wget -q -O /usr/bin/info https://raw.githubusercontent.com/Zeastore/set/main/dll/info.sh && chmod +x /usr/bin/info
     
     #Update Set-BR
-    wget -q -O /usr/bin/cleaner "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/logcleaner.sh" && chmod +x /usr/bin/cleaner
-    wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/backup.sh" && chmod +x /usr/bin/backup
-    wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/bckp.sh" && chmod +x /usr/bin/bckp
-    wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/restore.sh" && chmod +x /usr/bin/restore
-    wget -q -O /usr/bin/kernel-updt "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/kernel-updt.sh" && chmod +x /usr/bin/kernel-updt
-    wget -q -O /usr/bin/ubuntu-kernel "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/ubuntu-kernel.sh" && chmod +x /usr/bin/ubuntu-kernel
-    wget -q -O /usr/bin/ram "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/ram.py" && chmod +x /usr/bin/ram
-    wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/speedtest_cli.py" && chmod +x /usr/bin/speedtest
-    wget -q -O /usr/bin/swapkvm "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/swapkvm.sh" && chmod +x /usr/bin/swapkvm
-    wget -q -O /usr/bin/wbmn "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/webmin.sh" && chmod +x /usr/bin/wbmn
-    wget -q -O /usr/bin/update-script "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/system/update-script.sh" && chmod +x /usr/bin/update-script
-    wget -q -O /usr/bin/cloudflare-pointing "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/cloudflare-pointing.sh" && chmod +x /usr/bin/cloudflare-pointing
-    wget -q -O /usr/bin/cloudflare-setting "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/cloudflare-setting.sh" && chmod +x /usr/bin/cloudflare-setting
-    wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
-    wget -q -O /usr/bin/importantfile "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/toolkit.sh" && chmod +x /usr/bin/importantfile
-    wget -q -O /usr/bin/restart-service "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/restart-service.sh" && chmod +x /usr/bin/restart-service
+    wget -q -O /usr/bin/cleaner "https://raw.githubusercontent.com/Zeastore/set/main/dll/logcleaner.sh" && chmod +x /usr/bin/cleaner
+    wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/backup.sh" && chmod +x /usr/bin/backup
+    wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/bckp.sh" && chmod +x /usr/bin/bckp
+    wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/restore.sh" && chmod +x /usr/bin/restore
+    wget -q -O /usr/bin/kernel-updt "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/kernel-updt.sh" && chmod +x /usr/bin/kernel-updt
+    wget -q -O /usr/bin/ubuntu-kernel "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/ubuntu-kernel.sh" && chmod +x /usr/bin/ubuntu-kernel
+    wget -q -O /usr/bin/ram "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/ram.py" && chmod +x /usr/bin/ram
+    wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/speedtest_cli.py" && chmod +x /usr/bin/speedtest
+    wget -q -O /usr/bin/swapkvm "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/swapkvm.sh" && chmod +x /usr/bin/swapkvm
+    wget -q -O /usr/bin/wbmn "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/webmin.sh" && chmod +x /usr/bin/wbmn
+    wget -q -O /usr/bin/update-script "https://raw.githubusercontent.com/Zeastore/set/main/dll/system/update-script.sh" && chmod +x /usr/bin/update-script
+    wget -q -O /usr/bin/cloudflare-pointing "https://raw.githubusercontent.com/Zeastore/set/main/dll/cloudflare-pointing.sh" && chmod +x /usr/bin/cloudflare-pointing
+    wget -q -O /usr/bin/cloudflare-setting "https://raw.githubusercontent.com/Zeastore/set/main/dll/cloudflare-setting.sh" && chmod +x /usr/bin/cloudflare-setting
+    wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/Zeastore/set/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
+    wget -q -O /usr/bin/importantfile "https://raw.githubusercontent.com/Zeastore/set/main/dll/toolkit.sh" && chmod +x /usr/bin/importantfile
+    wget -q -O /usr/bin/restart-service "https://raw.githubusercontent.com/Zeastore/set/main/dll/restart-service.sh" && chmod +x /usr/bin/restart-service
     wget -q -O /usr/bin/ohp https://scrzoke.000webhostapp.com/ohp && chmod +x /usr/bin/ohp
-    wget -q -O /usr/bin/ohp-ssh "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-ssh.sh" && chmod +x /usr/bin/ohp-ssh
-    wget -q -O /usr/bin/ohp-db "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-db.sh" && chmod +x /usr/bin/ohp-db
-    wget -q -O /usr/bin/ohp-opn "https://raw.githubusercontent.com/scvps/scriptvps/main/dll/ohp-opn.sh" && chmod +x /usr/bin/ohp-opn
+    wget -q -O /usr/bin/ohp-ssh "https://raw.githubusercontent.com/Zeastore/set/main/dll/ohp-ssh.sh" && chmod +x /usr/bin/ohp-ssh
+    wget -q -O /usr/bin/ohp-db "https://raw.githubusercontent.com/Zeastore/set/main/dll/ohp-db.sh" && chmod +x /usr/bin/ohp-db
+    wget -q -O /usr/bin/ohp-opn "https://raw.githubusercontent.com/Zeastore/set/main/dll/ohp-opn.sh" && chmod +x /usr/bin/ohp-opn
 
     echo -e "[ ${green}INFO${NC} ] Updating bot panel telegram..."
     #Update Bot-Panel
@@ -228,11 +228,11 @@ echo -e "[ ${green}INFO${NC} ] Updating extension ..."
     wget -q -O /usr/bin/bbt "https://raw.githubusercontent.com/scvps/scriptvps/main/bot_panel/bbt.sh" && chmod +x /usr/bin/bbt
 
 #BrBaru
-wget -q -O /usr/bin/addxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/add.sh" && chmod +x /usr/bin/addxtls
-wget -q -O /usr/bin/delxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/del.sh" && chmod +x /usr/bin/delxtls
-wget -q -O /usr/bin/cekxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/chk.sh" && chmod +x /usr/bin/cekxtls
-wget -q -O /usr/bin/renewxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/rnw.sh" && chmod +x /usr/bin/renewxtls
-wget -q -O /usr/bin/portxtls "https://raw.githubusercontent.com/scvps/scriptvps/main/xray/pxt.sh" && chmod +x /usr/bin/portxtls
+wget -q -O /usr/bin/addxtls "https://raw.githubusercontent.com/Zeastore/set/main/xray/add.sh" && chmod +x /usr/bin/addxtls
+wget -q -O /usr/bin/delxtls "https://raw.githubusercontent.com/Zeastore/set/main/xray/del.sh" && chmod +x /usr/bin/delxtls
+wget -q -O /usr/bin/cekxtls "https://raw.githubusercontent.com/Zeastore/set/main/xray/chk.sh" && chmod +x /usr/bin/cekxtls
+wget -q -O /usr/bin/renewxtls "https://raw.githubusercontent.com/Zeastore/set/main/xray/rnw.sh" && chmod +x /usr/bin/renewxtls
+wget -q -O /usr/bin/portxtls "https://raw.githubusercontent.com/Zeastore/set/main/xray/pxt.sh" && chmod +x /usr/bin/portxtls
 
 }
 echo -e "[ ${green}INFO${NC} ] Updating script ..."
